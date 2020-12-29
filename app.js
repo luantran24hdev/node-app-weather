@@ -14,7 +14,7 @@ app.get('/users', (req, res)=>{
 
 
 app.get('/form', (req, res)=>{
-	res.render('users/form');
+	res.render('users/form'); //123123
 })
 
 
