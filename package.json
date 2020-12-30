@@ -2,14 +2,34 @@
   "name": "nodedemo",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "src/index.js",
   "scripts": {
+    "start": "nodemon src/index.js",
+    "watch": "node-sass --watch src/resources/scss/ --output src/public/css/",
     "test": "echo \"Error: no test specified\" && exit 1"
+    
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luantran24hdev/trainingNodejs.git"
+  },
+  "keywords": [
+    "blog",
+    "nodejs"
+  ],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luantran24hdev/trainingNodejs/issues"
+  },
+  "homepage": "https://github.com/luantran24hdev/trainingNodejs#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "pug": "^3.0.0"
+    "express-handlebars": "^5.2.0",
+    "node-sass": "^5.0.0"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.6"
   }
 }
