@@ -1,0 +1,49 @@
+MVC NODEJS : 
+
+
+Từ folder bao quát nhất đi vào folder chi tiết nhất :
+
+ROUTER : 
+
+-   index / src : 
+
+const route = require('./routers');
+
+và sử dụng tạo router bằng cách : 
+
+route(app);
+
+
+-   router /src: folder này chứa các file tương ứng với từng pages trong dự án : /news, /home, /about-us
+-   router/news/src : trong file news chứa tất cả các dữ liệu về router của news pages
+    -   Đầu tiên phải : const newsController = require('../app/controllers/NewsController'); từ controllers vào 
+    -   Thứ 2 phải : const router  = express.Router();   lấy router từ express
+    -   Cuối cùng custom router theo ý của mình : 
+    -   router.use('/:slug',newsController.show);   localhost:3000/news/khoa-hoc-vuejs
+        router.use('/',newsController.index);       localhost:3000/news
+
+------------------------------------------------------------------------------------------------------------------
+CONTROLLERS : 
+NewsController/controllers/src : 
+-   Khởi tạo 1 đối tượng NewsController  
+
+    class NewsController {
+    // domain : /news
+    index(req, res){
+        res.render('news');
+    }
+
+    // domain : /news/:slug
+    show(req, res){
+        res.send('NEWS DETAIL');
+    }
+}
+
+
+module.exports = new NewsController;
+
+CONTROLLERS sẽ đảm nhận vai trò truyền dữ liệu vào router mà ta đã khởi tạo trong phần router :
+    -  index : news -> khi gõ vào url localhost:3000/news -> thì sẽ link đến news pages -> vì nó sẽ vào phần index đầu tiên 
+    -  show : đây chính là slug của /news/:slug
+
+VIEW : SẼ ĐƯỢC NHẬN TỪ CONTROLLERS render -> trỏ đến views hoặc send('đâsd')  -> nhập lên 1 string trên router đó 

@@ -1,3 +1,11 @@
 .app {
   width: 80%;
   margin: 0 auto; }
+
+.search {
+  margin: 10% auto;
+  width: 80%; }
+
+.title {
+  text-align: center;
+  color: yellowgreen; }
