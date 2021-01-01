@@ -8,6 +8,15 @@ const port = 3000;
 // import MVC
 const route = require('./routers');
 
+// imporrt DB
+
+const db = require('./config/db');
+
+
+db.connect();
+
+
+
 // dùng file static (img)
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -22,5 +31,5 @@ app.set('views', path.join(__dirname, 'resources/views'));
 route(app);
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`App listening at http://localhost:${port}`);
 });

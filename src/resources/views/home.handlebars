@@ -1,1 +1,26 @@
-<h1>HomePage</h1>
+<div class="mt-4 mb-4">
+    <div class="row">
+
+        {{!-- lặp item của handlebars-express --}}
+
+        {{#each courses}}
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card">
+                    <a href="/courses/{{this.slug}}">
+                    <img src="{{this.thumb}}" class="card-img-top" alt="{{this.name}}">
+                    </a>
+                    
+                    <div class="card-body">
+                        <a href="/courses/{{this.slug}}">
+                            <p class="card-tittle">{{this.name}}</p>
+                        </a>
+                        <p class="card-text">{{this.description}}</p>
+                    </div>
+                </div>
+                
+            </div>
+            
+        {{/each}}
+    </div>
+    
+</div>
